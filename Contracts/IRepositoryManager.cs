@@ -11,7 +11,7 @@ namespace Contracts
         ICompanyRepository Company { get; }
         IEmployeeRepository Employee { get; }
         IProductRepository Product { get; }
-        IAnimalRepository Client { get; }
+        IAnimalRepository Animal { get; }
         void Save();
 
     }

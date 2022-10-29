@@ -14,5 +14,7 @@ namespace Repository
         public AnimalRepository(RepositoryContext repositoryContext): base(repositoryContext)
         {
         }
+
+        public IEnumerable<Animal> GetAllAnimal(bool trackChanges) => FindAll(trackChanges).OrderBy(c => c.AnimalName).ToList();
     }
 }

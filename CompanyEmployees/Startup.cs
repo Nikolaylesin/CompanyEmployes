@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.HttpOverrides;
 using CompanyEmployees.Extensions;
 using NLog;
-
+using AutoMapper;
+using Entities.Models;
+using Entities.DataTransferObjects;
 
 namespace CompanyEmployees;
 
@@ -55,5 +57,15 @@ public class Startup
         {
             endpoints.MapControllers();
         });
+    }
+
+    public class MappingProfile : Profile
+    {
+        public MappingProfile()
+        {
+            CreateMap<Company, CompanyDto>().ForMember(c => c.FullAddress, opt => opt.MapFrom(x => string.Join(' ', x.Address, x.Country)));
+            CreateMap<Animal, AnimalDto>();
+            CreateMap<Product, ProductDto>();
+        }
     }
 }

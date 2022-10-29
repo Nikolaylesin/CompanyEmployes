@@ -37,7 +37,7 @@ namespace Repository
                 return _employeeRepository;
             }
         }
-        public IAnimalRepository Client
+        public IAnimalRepository Animal
         {
             get
             {
