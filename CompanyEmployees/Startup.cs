@@ -71,6 +71,10 @@ public class Startup
             CreateMap<Animal, AnimalDto>();
             CreateMap<Product, ProductDto>();
             CreateMap<Employee, EmployeeDto>();
+            CreateMap<CompanyForCreationDto, Company>();
+            CreateMap<AnimalForCreationDto, Animal>();
+            CreateMap<EmployeeForCreationDto, Employee>();
+            CreateMap<ProductForCreationDto, Product>();
         }
     }
 }

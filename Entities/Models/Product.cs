@@ -20,6 +20,8 @@ namespace Entities.Models
         [Required(ErrorMessage = "Product cost is a required field.")]
         public int Cost { get; set; }
 
+        public Guid AnimalId { get; set; }
+
         [Required(ErrorMessage = "Product cost is a required field.")]
         public int Quantity { get; set; }
     }

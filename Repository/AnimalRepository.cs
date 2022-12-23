@@ -19,5 +19,10 @@ namespace Repository
 
         public Animal GetAnimal(Guid animalId, bool trackChanges) => FindByCondition(c
             => c.Id.Equals(animalId), trackChanges).SingleOrDefault();
+
+        public void CreateAnimal(Animal animal) => Create(animal);
+
+        public IEnumerable<Animal> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+            FindByCondition(x => ids.Contains(x.guid), trackChanges).ToList();
     }
 }

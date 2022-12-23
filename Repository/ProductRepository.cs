@@ -22,5 +22,11 @@ namespace Repository
         public Product GetProduct(Guid animalId, Guid id, bool trackChanges) =>
         FindByCondition(e => e.ProductId.Equals(animalId) && e.ProductId.Equals(id),
         trackChanges).SingleOrDefault();
+
+        public void CreateProductForAnimal(Guid animalId, Product product)
+        {
+            product.AnimalId = animalId;
+            Create(product);
+        }
     }
 }
