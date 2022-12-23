@@ -12,6 +12,7 @@ namespace Entities.Models
     {
         [Column("AnimalId")]
         public int Id { get; set; }
+        public Guid guid { get; set; }
 
         [Required(ErrorMessage = "Animal name is a required field.")]
         [MaxLength(60, ErrorMessage = "Maximum length for the Name is 60 characters.")]

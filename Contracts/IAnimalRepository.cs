@@ -11,5 +11,7 @@ namespace Contracts
     {
         IEnumerable<Animal> GetAllAnimal(bool trackChanges);
         Animal GetAnimal(Guid animalId, bool trackChanges);
+        void CreateAnimal(Animal animal);
+        IEnumerable<Animal> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
     }
 }

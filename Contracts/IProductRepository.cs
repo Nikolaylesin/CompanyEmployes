@@ -11,5 +11,6 @@ namespace Contracts
     {
         IEnumerable<Product> GetProduct(Guid productId, bool trackChanges);
         Product GetProduct(Guid productId, Guid id, bool trackChanges);
+        void CreateProductForAnimal(Guid animalId, Product product);
     }
 }
