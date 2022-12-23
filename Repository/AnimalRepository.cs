@@ -16,5 +16,8 @@ namespace Repository
         }
 
         public IEnumerable<Animal> GetAllAnimal(bool trackChanges) => FindAll(trackChanges).OrderBy(c => c.AnimalName).ToList();
+
+        public Animal GetAnimal(Guid animalId, bool trackChanges) => FindByCondition(c
+            => c.Id.Equals(animalId), trackChanges).SingleOrDefault();
     }
 }

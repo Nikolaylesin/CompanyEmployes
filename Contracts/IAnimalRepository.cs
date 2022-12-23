@@ -10,5 +10,6 @@ namespace Contracts
     public interface IAnimalRepository
     {
         IEnumerable<Animal> GetAllAnimal(bool trackChanges);
+        Animal GetAnimal(Guid animalId, bool trackChanges);
     }
 }

@@ -14,5 +14,13 @@ namespace Repository
         public ProductRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+
+        public IEnumerable<Product> GetProduct(Guid animalId, bool trackChanges) =>
+        FindByCondition(e => e.ProductId.Equals(animalId), trackChanges)
+        .OrderBy(e => e.NameProduct);
+
+        public Product GetProduct(Guid animalId, Guid id, bool trackChanges) =>
+        FindByCondition(e => e.ProductId.Equals(animalId) && e.ProductId.Equals(id),
+        trackChanges).SingleOrDefault();
     }
 }

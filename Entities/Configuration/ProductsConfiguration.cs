@@ -17,14 +17,14 @@ namespace Entities.Configuration
             (
             new Product
             {
-                Id = 1,
+                ProductId = 1,
                 NameProduct = "Носки",
                 Cost = 100,
                 Quantity=4
             },
             new Product
             {
-                Id = 2,
+                ProductId = 2,
                 NameProduct = "Шапка",
                 Cost = 400,
                 Quantity=5

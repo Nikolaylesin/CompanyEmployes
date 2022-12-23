@@ -21,12 +21,20 @@ namespace CompanyEmployees.Controllers
             _logger = logger;
             _mapper = mapper;
         }
-        [HttpGet]
-        public IActionResult GetAnimal()
+        [HttpGet("{id}")]
+        public IActionResult GetAnimal(Guid id)
         {
-            var animals = _repository.Animal.GetAllAnimal(trackChanges: false);
-            var animalsDto = _mapper.Map<IEnumerable<AnimalDto>>(animals);
-            return Ok(animalsDto);
+            var animal = _repository.Animal.GetAnimal(id, trackChanges: false);
+            if (animal == null)
+            {
+                _logger.LogInfo($"Animal with id: {id} doesn't exist in the database.");
+                return NotFound();
+            }
+            else
+            {
+                var animalDto = _mapper.Map<AnimalDto>(animal);
+                return Ok(animalDto);
+            }
         }
     }
 }

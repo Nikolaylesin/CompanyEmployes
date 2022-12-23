@@ -11,7 +11,7 @@ namespace Entities.Models
     public class Product
     {
         [Column("ProductId")]
-        public int Id { get; set; }
+        public int ProductId { get; set; }
 
         [Required(ErrorMessage = "Product name is a required field.")]
         [MaxLength(60, ErrorMessage = "Maximum length for the Name is 60 characters.")]
